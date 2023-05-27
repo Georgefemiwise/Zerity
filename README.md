@@ -13,5 +13,5 @@ The program will have test questions and a code fake code-space that stores snap
 - A dedicated code snapshot that can be copied and pasted into a genuine IDE for testing.
 ##### AUTHENTICATION: 
 - Student authentication through (index, full name, email, and program).
-<!-- - Examinator. -->
+- Examinator.
 
