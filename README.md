@@ -1,17 +1,13 @@
 # Zerity
 
-Zerity is a web application that helps developers in school improve <br>
-their eperince during exam with the ability to code and test code. <br>
-The program will have test questions and a code fake code-space that stores snapshots of student code. <br><br>
+Zerity is a web application designed to enhance the exam experience for developers in school by offering coding
+capabilities and code testing. The platform includes test questions and a simulated code environment that stores snapshots of students' code. <br><br>
 
-## The following are the basic functions:
-##### EXAM SETTER
-- It allows teachers to create questions, and each question has a code area allotted to it.
-##### TIMER 
-- A timer that regulates the length of time tests are given.
-##### SNAPSHOTS: 
-- A dedicated code snapshot that can be copied and pasted into a genuine IDE for testing.
-##### AUTHENTICATION: 
-- Student authentication through (index, full name, email, and program).
-- Examinator.
 
+## The basic functions of the system include:
+
+1. Exam Setter: Teachers can create questions.
+2. Timer: Regulates the duration of exams/tests.
+3. Snapshots: Code snapshots for testing, easily copied and pasted into a genuine IDE.
+4. Authentication: Students authenticate using their index, full name, email, and program.
+5. Examinator: Additional functionality for the examiner.
