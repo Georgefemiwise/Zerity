@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* fixed width only on sm and up */
+@media (min-width: 640px) {
+  .w-fixed {
+    flex: 0 1 230px;
+    min-width: 230px;
+  }
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,10 +36,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  position: relative;
 }
 
 h1 {
