@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigatinLink from './links/NavigationLink';
+import ZerityIcon from '../../assets/Zerity-icon.svg'
 
 const NavUrls = [
 	{
@@ -106,11 +107,11 @@ const NavUrls = [
 
 export default function NavBar() {
 	return (
-		<div className='flex h-screen w-16 flex-col justify-between border-e bg-white'>
+		<div className='flex h-screen w-16 flex-col justify-between border-e bg-gray-950'>
 			<div>
 				<div className='inline-flex h-16 w-16 items-center justify-center'>
 					<span className='grid h-10 w-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600'>
-						L
+						<img src={ZerityIcon} alt="" />
 					</span>
 				</div>
 
@@ -131,7 +132,7 @@ export default function NavBar() {
 				</div>
 			</div>
 
-			<div className='sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2'>
+			<div className='sticky inset-x-0 bottom-0 border-t border-gray-500  p-2'>
 				<form action='/logout'>
 					<button
 						type='submit'

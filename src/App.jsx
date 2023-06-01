@@ -8,8 +8,8 @@ import TopNavigationBar from './components/Navigation/TopNavigationBar';
 export default function App() {
 	return (
 		<>
-			<TopNavigationBar />
 			<SideNavgationBar />
+			<TopNavigationBar />
 
 			<div className='p-4 sm:ml-20'>
 				<div className='p-4 border-2 border-gray-200 border-dashed rounded-md dark:border-gray-700 mt-14 min-h-screen'>

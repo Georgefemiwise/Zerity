@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import SnapShot from './snapShot/SnapShot';
-import NavigationBar from './Navigation/NavigationMenu';
+import NavigationMenu from './Navigation/NavigationMenu';
 import Question from './question/Question';
+import Answer from './question/AnswerOption';
 
 const dommQuestions = [
 	{
@@ -72,27 +73,35 @@ const dommQuestions = [
 ];
 
 export default function Main() {
+
 	const [readySnapShot, setReadySnapShot] = useState(false);
 	function toggleSnapShot() {
 		setReadySnapShot((prev) => !prev);
 	}
 	return (
 		<div className=' h-full ml-10'>
-			{/* <NavigationBar /> */}
-			{/* <div className='status-bar flex flex-row w-full h-fit justify-end px-5 py-1 '>
+			<div className='status-bar flex flex-row w-full h-fit justify-end px-5 py-1 '>
 				<button
 					onClick={toggleSnapShot}
-					className=' bg-green-400 capitalize'>
+					className=' bg-indigo-900 capitalize active:bg-indigo-700'>
 					{readySnapShot ? 'close' : 'open'}
 				</button>
-			</div> */}
-			{dommQuestions.map((question, index) => (
-				<Question
-					question={question.question}
-					questionNumber={index + 1}
-					answers={question.answers}
-				/>
-			))}
+			</div>
+			<div className='flex'>
+				<div>
+					{dommQuestions.map((question, index) => (
+						<Question
+							key={index}
+							question={question.question}
+							answers={question.answers}
+							snapShot={toggleSnapShot}
+						/>
+					))}
+				</div>
+				<div className='fixed top-40 right-10'>
+					<SnapShot toggle={readySnapShot} />
+				</div>
+			</div>
 		</div>
 	);
 }
