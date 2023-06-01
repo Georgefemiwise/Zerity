@@ -75,7 +75,7 @@ export default function Question({ question, answers, questionNumber }) {
 						</svg>
 
 						<span className='text-[10px] font-medium sm:text-xs'>
-							Solved!
+							code
 						</span>
 					</strong>
 				</div>
