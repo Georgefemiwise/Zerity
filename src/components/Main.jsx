@@ -95,11 +95,12 @@ export default function Main() {
 							question={question.question}
 							answers={question.answers}
 							snapShot={toggleSnapShot}
+							questionNo={index+1}
 						/>
 					))}
 				</div>
 				<div className='fixed top-40 right-10'>
-					<SnapShot toggle={readySnapShot} />
+					<SnapShot toggle={readySnapShot} questionNo={''}/>
 				</div>
 			</div>
 		</div>

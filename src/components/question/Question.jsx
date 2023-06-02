@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AnswerOption from './AnswerOption';
 
-const Question = ({ question, answers,snapShot }) => {
+const Question = ({ question, answers, snapShot, questionNo }) => {
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
 
 	const handleAnswerSelect = (answer) => {
@@ -10,7 +10,10 @@ const Question = ({ question, answers,snapShot }) => {
 
 	return (
 		<div className='mt-5 group'>
-			<h2>{question}</h2>
+			<h2>
+				<span className='font-semibold'>{questionNo},</span>{' '}
+				{question}
+			</h2>
 			<fieldset className=''>
 				{answers.map((answer, index) => (
 					<AnswerOption
@@ -21,8 +24,10 @@ const Question = ({ question, answers,snapShot }) => {
 					/>
 				))}
 			</fieldset>
-			<div class='flex justify-end'>
-				<button onClick={snapShot} className='-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-green-600 px-3 py-1.5 text-white'>
+			<div class='flex justify-end h-5'>
+				<button
+					onClick={snapShot}
+					className=' hidden group-hover:inline-flex  -mb-[2px] -me-[2px]  items-center gap-1 rounded-ee-xl rounded-ss-xl bg-green-600 px-3 py-1.5 text-white'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						class='h-4 w-4'
@@ -37,9 +42,7 @@ const Question = ({ question, answers,snapShot }) => {
 						/>
 					</svg>
 
-					<span class=' font-medium sm:text-xs'>
-						code
-					</span>
+					<span class=' font-medium sm:text-xs'>code</span>
 				</button>
 			</div>
 		</div>
@@ -47,4 +50,3 @@ const Question = ({ question, answers,snapShot }) => {
 };
 
 export default Question;
-
