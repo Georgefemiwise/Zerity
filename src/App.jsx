@@ -1,24 +1,47 @@
 import React from 'react';
-import NavigationBar from './components/Navigation/NavigationMenu';
-import Main from './components/Main';
+import { Routes, Route } from 'react-router-dom';
 
-import SideNavgationBar from './components/Navigation/SideNavigationBar';
-import TopNavigationBar from './components/Navigation/TopNavigationBar';
+import Home from './pages/Home';
+import Hall from './pages/Hall';
+import Register from './pages/user/Register';
+import Account from './pages/user/Account';
+import Logout from './pages/user/Logout';
+import NoPage from './pages/NoPage';
+import Login from './pages/user/Login';
 
 export default function App() {
 	return (
 		<>
-			<SideNavgationBar />
-			<TopNavigationBar />
-
-			<div className='p-4 sm:ml-20'>
-				<div className='p-4 border-2 border-gray-200 border-dashed rounded-md dark:border-gray-700 mt-14 min-h-screen'>
-					<Main />
-				</div>
-			</div>
+			<Routes>
+				<Route
+					path='/'
+					index
+					element={<Home />}
+				/>
+				<Route
+					path='hall'
+					element={<Hall />}
+				/>
+				<Route
+					path='register'
+					element={<Register />}
+				/>
+				<Route
+					path='login'
+					element={<Login />}
+				/>
+				<Route
+					path='account'
+					element={<Account />}>
+					<Route
+						path='logout'
+						element={<Logout />}></Route>
+				</Route>
+				<Route
+					path='*'
+					element={<NoPage />}
+				/>
+			</Routes>
 		</>
 	);
 }
-// ! jej
-// ? kdkfdjj
-// 

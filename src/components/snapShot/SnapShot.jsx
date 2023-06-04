@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+
+
+
+
+// ! we are going to use a thirdparty library "// https://codemirror.net/" or "https://ace.c9.io/"to create the text editor instead of snippet.
 export default function SnapShot({ toggle,questionNo }) {
 	return (
 		<div
