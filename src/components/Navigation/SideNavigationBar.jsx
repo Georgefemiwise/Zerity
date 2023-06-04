@@ -1,17 +1,37 @@
 import React from 'react';
-import NavigationMenu from './NavigationMenu';
+import MainNav from './Navlinks/MainNav';
 
-export default function SideNavigationBar() {
+
+
+// Main component for the side navigation bar
+export default  function SideNavigationBar() {
 	return (
-		// side bar container holding the navigation links together
-		<aside
-			id='logo-sidebar'
-			className='fixed top-0 left-0  w-fit h-screen z-50 transition-transform -translate-x-full  sm:translate-x-0 bg-red-600 dark:border-gray-700'
-			aria-label='Sidebar'>
-			<div className='h-full px-1 bg-indigo-900 dark:'>
-				{/* navigation menu it self */}
-				<NavigationMenu />
+		<div>
+			<div className='flex h-screen flex-col justify-between border-e bg-gray-900 max-w-[10rem]'>
+				<div className='px-4 py-6'>
+					<MainNav />
+				</div>
+
+				{/* user detail  */}
+				<div className='sticky inset-x-0 bottom-0 border-t border-gray-100'>
+					<a
+						href='#'
+						className='flex items-center gap-2 bg-gray-900 p-4 '>
+						<div>
+							<p className='text-xs  text-gray-500  hover:text-gray-400 active:bg-gray-100'>
+								<strong className='block font-medium capitalize'>
+									john doe
+								</strong>
+								<span>johndoe@gmail.com</span>
+							</p>
+						</div>
+					</a>
+				</div>
 			</div>
-		</aside>
+		</div>
 	);
 }
+
+
+
+
