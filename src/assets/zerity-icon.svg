@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="31.71369"
+   height="33.393501"
+   viewBox="0 0 31.71369 33.393501"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="zerity-logo.svg"
+   inkscape:export-xdpi="96.002869"
+   inkscape:export-ydpi="96.002869"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-15.16979,-21.538055)">
+    <g
+       id="g1086"
+       style="fill:#000000"
+       inkscape:export-filename="zerity-icon.svg"
+       inkscape:export-xdpi="96.002869"
+       inkscape:export-ydpi="96.002869">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.9636px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:3.1;stroke-dasharray:none;paint-order:stroke fill markers"
+         x="-32.014515"
+         y="53.064472"
+         id="text1008"
+         transform="matrix(-0.92845918,0.37143444,0.37143444,0.92845918,0,0)"
+         inkscape:transform-center-x="7.5344064"
+         inkscape:transform-center-y="3.7596922"><tspan
+           sodipodi:role="line"
+           id="tspan1006"
+           x="-32.014515"
+           y="53.064472">&lt;</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.9636px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:3.1;stroke-dasharray:none;paint-order:stroke fill markers"
+         x="-2.8040338"
+         y="-40.983162"
+         id="text1080"
+         transform="matrix(0.92845919,-0.37143444,-0.37143444,-0.92845919,0,0)"
+         inkscape:transform-center-x="-7.534406"
+         inkscape:transform-center-y="-3.7596902"><tspan
+           sodipodi:role="line"
+           id="tspan1078"
+           x="-2.8040338"
+           y="-40.983162">&lt;</tspan></text>
+    </g>
+  </g>
+</svg>

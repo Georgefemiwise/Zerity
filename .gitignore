@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+
+designs/DB_design.dia
+designs/UML_design.dia
+designs/DB_design.dia.autosave
+designs/DB_design.dia~
+designs/Diagram1.dia
+designs/Diagram1.dia.autosave
