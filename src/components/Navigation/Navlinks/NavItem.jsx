@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom';
+
 // Component for individual navigation items
-export default function NavItem({ text, url }) {
+export default function NavItem({ text, url, handleClick, customColor }) {
 	return (
 		<div>
-			<a
-				href={url}
-				className='flex items-center gap-2 rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 active:bg-gray-100 '>
+			<Link
+				to={url}
+				onClick={handleClick}
+				className={`gap-2 rounded-lg  hover:text-accent ${customColor}`}>
 				<span className='text-sm font-medium'>{text}</span>
-			</a>
+			</Link>
 		</div>
 	);
 }

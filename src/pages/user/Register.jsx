@@ -1,65 +1,126 @@
-import React from 'react';
+import { useState } from 'react';
+import NavItem from '../../components/Navigation/Navlinks/NavItem';
 
 export default function Register() {
+	const [userDetails, setUserDetails] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
+		program: '',
+		indexNumber: '',
+		password: '',
+		PasswordConfirmation: '',
+	});
+
+	function handleFormSubmit(event) {
+		event.preventDefault();
+	}
+	function handleChange(e) {
+		const { name, value } = e.target;
+
+		setUserDetails({ ...userDetails, [name]: value });
+	}
+
+	function handleSubmit() {
+		console.log(userDetails);
+		// detail saving function
+	}
 	return (
 		<div>
-			<div className='mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
+			<div className='mx-auto min-h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
 				<div className='mx-auto max-w-lg'>
-					<h1 className='text-center text-2xl font-bold text-indigo-600 sm:text-3xl'>
-						Get started today
+					<h1 className='text-center text-2xl font-bold text-primary sm:text-3xl'>
+						Get Started
 					</h1>
-
 					<p className='mx-auto mt-4 max-w-md text-center text-gray-500'>
-						Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Obcaecati sunt dolores deleniti
-						inventore quaerat mollitia?
+						Us the bellow form to get started with your
+						registerstion
 					</p>
-
 					<form
-						action=''
-						className='mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 border border-slate-500'>
-						<form className='mt-8 grid grid-cols-6 gap-6'>
+						onSubmit={handleFormSubmit}
+						className='mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-2xl sm:p-6 lg:p-8  border-slate-500'>
+						<div className='mt-8 grid grid-cols-6 gap-6'>
 							<div className='col-span-6 sm:col-span-3'>
 								<label
-									htmlFor='FirstName'
+									htmlFor='firstName'
 									className='block text-sm font-medium text-gray-400'>
 									First Name
 								</label>
 
 								<input
+									onChange={handleChange}
 									type='text'
-									id='FirstName'
-									name='first_name'
+									id='firstName'
+									name='firstName'
 									className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
+									placeholder='John'
 								/>
 							</div>
 
 							<div className='col-span-6 sm:col-span-3'>
 								<label
-									htmlFor='LastName'
+									htmlFor='lastName'
 									className='block text-sm font-medium text-gray-400'>
 									Last Name
 								</label>
 
 								<input
+									onChange={handleChange}
 									type='text'
-									id='LastName'
-									name='last_name'
+									id='lastName'
+									name='lastName'
 									className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
+									placeholder='Smith'
 								/>
 							</div>
 
 							<div className='col-span-6'>
 								<label
-									htmlFor='Email'
+									htmlFor='email'
 									className='block text-sm font-medium text-gray-400'>
 									Email
 								</label>
 
 								<input
+									onChange={handleChange}
 									type='email'
-									id='Email'
+									id='email'
 									name='email'
+									className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
+									placeholder='example001@ttu.edu.gh'
+								/>
+							</div>
+
+							<div className='col-span-6 sm:col-span-3'>
+								<label
+									htmlFor='program'
+									className='block text-sm font-medium text-gray-400'>
+									Program
+								</label>
+
+								<input
+									onChange={handleChange}
+									type='text'
+									id='program'
+									name='program'
+									className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
+									placeholder='Btech IT'
+								/>
+							</div>
+
+							<div className='col-span-6 sm:col-span-3'>
+								<label
+									htmlFor='indexNumber'
+									className='block text-sm font-medium text-gray-400'>
+									index Number
+								</label>
+
+								<input
+									onChange={handleChange}
+									type='text'
+									id='indexNumber'
+									name='indexNumber'
+									placeholder='001'
 									className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
 								/>
 							</div>
@@ -72,10 +133,12 @@ export default function Register() {
 								</label>
 
 								<input
+									onChange={handleChange}
 									type='password'
 									id='Password'
 									name='password'
 									className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
+									placeholder='Enter password'
 								/>
 							</div>
 
@@ -87,18 +150,21 @@ export default function Register() {
 								</label>
 
 								<input
+									onChange={handleChange}
 									type='password'
 									id='PasswordConfirmation'
-									name='password_confirmation'
+									name='PasswordConfirmation'
 									className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
+									placeholder=' Confirmation Password'
 								/>
 							</div>
 
-							<div className='col-span-6'>
+							{/* <div className='col-span-6'>
 								<label
 									htmlFor='MarketingAccept'
 									className='flex gap-4'>
 									<input
+										onChange={handleChange}
 										type='checkbox'
 										id='MarketingAccept'
 										name='marketing_accept'
@@ -111,43 +177,35 @@ export default function Register() {
 										company announcements.
 									</span>
 								</label>
-							</div>
+							</div> */}
 
-							{/* <div className='col-span-6'>
+							<div className='col-span-6'>
 								<p className='text-sm text-gray-400'>
 									By creating an account, you agree
 									to our
-									<a
-										href='#'
-										className='text-gray-700 underline'>
-										terms and conditions
-									</a>
+									<a> terms and conditions </a>
 									and
-									<a
-										href='#'
-										className='text-gray-700 underline'>
-										privacy policy
-									</a>
-									.
+									<a> privacy policy</a>
 								</p>
-							</div> */}
+							</div>
 
-							<div className='col-span-6 sm:flex sm:items-center sm:gap-4'>
-								<button className='inline-block shrink-0 rounded-md border  bg-indigo-600  px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500'>
+							<div className='col-span-6 sm:flex sm:items-center sm:gap-4 flex-col'>
+								<button
+									onClick={handleSubmit}
+									className=' block w-full shrink-0 rounded-md border  bg-primary  px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-primary focus:outline-none focus:ring active:text-secondary active:border-secondary active:border'>
 									Create my account
 								</button>
 
-								<p className='mt-4 text-sm text-gray-500 sm:mt-0'>
+								<p className=' mt-4 text-sm text-gray-500 sm:mt-0 text-center flex'>
 									Already have an account?
-									<a
-										href='#'
-										className='text-indigo-600 underline ml-1'>
-										Log in
-									</a>
-									.
+									<NavItem
+										customColor='text-accent  underline ml-1 hover:no-underline'
+										text='Log in'
+										url='/login'
+									/>
 								</p>
 							</div>
-						</form>
+						</div>
 					</form>
 				</div>
 			</div>
