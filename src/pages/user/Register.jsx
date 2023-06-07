@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import NavItem from '../../components/Navigation/Navlinks/NavItem';
+import Alert from '../../utils/Alert';
 
 export default function Register() {
 	const [userDetails, setUserDetails] = useState({
@@ -12,6 +13,10 @@ export default function Register() {
 		PasswordConfirmation: '',
 	});
 
+	const [showAlert, setShowAlert] = useState(false);
+	const [alertMessage, setAlertMessage] = useState('');
+	const [alertType, setAlertType] = useState('');
+
 	function handleFormSubmit(event) {
 		event.preventDefault();
 	}
@@ -21,12 +26,40 @@ export default function Register() {
 		setUserDetails({ ...userDetails, [name]: value });
 	}
 
-	function handleSubmit() {
-		console.log(userDetails);
-		// detail saving function
+	function handleSubmit(event) {
+		event.preventDefault(); // Prevents the form from submitting and refreshing the page
+
+		const {
+			firstName,
+			lastName,
+			email,
+			program,
+			indexNumber,
+			password,
+			PasswordConfirmation,
+		} = userDetails; // Destructure email and password from userDetails state
+
+		// Perform authentication logic
+		if (password !== PasswordConfirmation) {
+			setAlertMessage('Password dont match');
+			setAlertType('error');
+			setShowAlert(true);
+		} else {
+			setAlertMessage('Failed to create account');
+			setAlertType('warning');
+			setShowAlert(true);
+		}
 	}
+
 	return (
 		<div>
+			{showAlert && (
+				<Alert
+					message={alertMessage}
+					type={alertType}
+					showAlert={setShowAlert}
+				/>
+			)}
 			<div className='mx-auto min-h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
 				<div className='mx-auto max-w-lg'>
 					<h1 className='text-center text-2xl font-bold text-primary sm:text-3xl'>

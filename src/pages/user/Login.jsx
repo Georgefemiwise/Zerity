@@ -1,38 +1,59 @@
 import { useState } from 'react';
 import NavItem from '../../components/Navigation/Navlinks/NavItem';
+import Alert from '../../utils/Alert';
 
 export default function Login() {
+	const [showAlert, setShowAlert] = useState(false);
+	const [alertMessage, setAlertMessage] = useState('');
+	const [alertType, setAlertType] = useState('');
+
 	const [logInDetails, setLogInDetails] = useState({
 		email: '',
 		password: '',
 	});
 
-	function handleFormSubmit(event) {
-		event.preventDefault();
-	}
 	function handleChange(e) {
 		const { name, value } = e.target;
-
-		setLogInDetails({ ...userDetails, [name]: value });
+		setLogInDetails({ ...logInDetails, [name]: value });
 	}
 
-	function handleSubmit() {
-		console.log(logInDetails);
-		// detail saving function
+
+	function handleSubmit(event) {
+		event.preventDefault(); // Prevents the form from submitting and refreshing the page
+
+		const { email, password } = logInDetails; // Destructure email and password from logInDetails state
+
+		// Perform authentication logic
+		if (email === 'admin@admin.com' && password === '12345') {
+			setAlertMessage('Successfully logged in!');
+			setAlertType('success');
+			setShowAlert(true);
+			console.log('Successfully logged in!');
+		} else {
+			setAlertMessage('Incorrect password or email!');
+			setAlertType('warning');
+			setShowAlert(true);
+			console.log('failed logged in!');
+		}
 	}
-	function loader() {
-		<div className='animate-spin p-3 border-4 rounded-full border-primary  border-t-transparent border-b-transparent'></div>;
-	}
+
 	return (
-		<div>
-			<div className='mx-auto min-h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
+		<div className='relative'>
+			
+
+			<div className='mx-auto min-h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>{showAlert && (
+				<Alert
+					message={alertMessage}
+					type={alertType}
+					showAlert={setShowAlert}
+				/>
+			)}
 				<div className='mx-auto max-w-lg'>
 					<h1 className='text-center text-2xl font-bold text-primary sm:text-3xl'>
 						Sign In
 					</h1>
-
 					<form
-						onSubmit={handleFormSubmit}
+						onSubmit={handleSubmit}
 						className='mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-2xl sm:p-6 lg:p-8'>
 						<div>
 							<label
@@ -71,14 +92,12 @@ export default function Login() {
 						</div>
 
 						<button
-							onClick={loader}
 							type='submit'
 							className=' block w-full shrink-0 rounded-md border  bg-primary  px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-primary focus:outline-none focus:ring active:text-secondary active:border-secondary active:border'>
 							Log In
 						</button>
 
 						<p className='text-center text-sm  text-gray-500 flex items-center justify-center '>
-							
 							No account?
 							<NavItem
 								customColor='text-accent  underline ml-1 hover:no-underline'
