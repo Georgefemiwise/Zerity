@@ -2,12 +2,12 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Hall from './pages/Hall';
-import Register from './pages/user/Register';
-import Account from './pages/user/Account';
-import Logout from './pages/user/Logout';
+import Main from './pages/Main';
+import Register from './pages/auth/Register';
+import Account from './pages/auth/Account';
+import Logout from './pages/auth/Logout';
 import NoPage from './pages/NoPage';
-import Login from './pages/user/Login';
+import Login from './pages/auth/Login';
 
 export default function App() {
 	return (
@@ -19,8 +19,8 @@ export default function App() {
 					element={<Home />}
 				/>
 				<Route
-					path='hall'
-					element={<Hall />}
+					path='main'
+					element={<Main />}
 				/>
 				<Route
 					path='register'

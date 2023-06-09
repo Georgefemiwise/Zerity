@@ -1,10 +1,8 @@
 import React from 'react';
-import MainNav from './Navlinks/MainNav';
-
-
+import MainNav from './navlinks/MainNav';
 
 // Main component for the side navigation bar
-export default  function SideNavigationBar() {
+export default function SideNavigationBar() {
 	return (
 		<div>
 			<div className='flex h-screen flex-col justify-between border-e bg-gray-900 max-w-[10rem]'>
@@ -31,7 +29,3 @@ export default  function SideNavigationBar() {
 		</div>
 	);
 }
-
-
-
-
