@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken")
 const JWT_ACCESS_TOKEN = process.env.TOKEN_KEY
 
 function generateAuthToken(data){
-  const token = jwt.sign(data, JWT_ACCESS_TOKEN, { expiresIn: '10h' })
+  const token = jwt.sign(data, JWT_ACCESS_TOKEN, { expiresIn: '10h'})
   return token
 }
 
@@ -177,4 +177,18 @@ module.exports.resetPassword = async (req, res) => {
         return res.send(error.message)
     }
     
+}
+
+
+
+// user logout
+module.exports.logout= async(req,res,next)=>{
+  const _id=req.userId;
+  const user=await User.findByIdAndUpdate({_id})
+  if(user){
+    return res.status(201).json({
+      msg:"User logOut success"
+    })
+  }
+  next();
 }
