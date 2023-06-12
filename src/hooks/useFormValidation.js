@@ -5,6 +5,7 @@ const useFormValidation = (initialState, validate) => {
 	const [errors, setErrors] = useState({});
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
+	// handles any change made on inputs such as words typed
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setValues((prevValues) => ({
@@ -13,16 +14,17 @@ const useFormValidation = (initialState, validate) => {
 		}));
 	};
 
+	// handles form submission
 	const handleSubmit = (event) => {
-		event.preventDefault();
+		event.preventDefault(); //prevent default refresh on submit
 		setErrors(validate(values));
 		setIsSubmitting(true);
 	};
-
+ 
 	return {
-		values,
-		errors,
-		isSubmitting,
+		values, //the value itself
+		errors, // error message
+		isSubmitting, //stops submiting is there is an empty input
 		handleChange,
 		handleSubmit,
 	};

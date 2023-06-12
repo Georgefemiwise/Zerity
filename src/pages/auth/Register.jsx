@@ -5,7 +5,7 @@ import Alert from '../../utils/Alert';
 import Button from '../../components/button/Button';
 import useFormValidation from '../../hooks/useFormValidation';
 
-const Register = () => {
+const Register = () => { 
 	const initialState = {
 		firstName: '',
 		lastName: '',
@@ -71,22 +71,24 @@ const Register = () => {
 					showAlert={() => {}}
 				/>
 			)}
-			<div className='mx-auto min-h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
-				<div className='mx-auto max-w-lg'>
-					<h1 className='text-center font-extrabold text-white sm:text-4xl'>
+			<div className='max-w-screen-xl min-h-screen px-4 py-16 mx-auto sm:px-6 lg:px-8'>
+				<div className='max-w-lg mx-auto'>
+					<h1 className='font-extrabold text-center text-white sm:text-4xl'>
 						Get Started
 					</h1>
-					<p className='mx-auto mt-4 max-w-md text-center text-gray-500'>
+					<p className='max-w-md mx-auto mt-4 text-center text-gray-500'>
 						Use the below form to get started with your
 						registration
 					</p>
+
+					{/* form start  */}
 					<form
 						onSubmit={handleFormSubmit}
-						className='mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-2xl sm:p-6 lg:p-8  border-slate-500'>
+						className='p-4 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl sm:p-6 lg:p-8 border-slate-500'>
 						<div className='grid grid-cols-6 gap-6'>
 							<div className='col-span-6 sm:col-span-3'>
 								{errors.firstName && (
-									<p className='text-error text-sm'>
+									<p className='text-sm text-error'>
 										{errors.firstName}
 									</p>
 								)}
@@ -112,7 +114,7 @@ const Register = () => {
 
 							<div className='col-span-6 sm:col-span-3'>
 								{errors.lastName && (
-									<p className='text-error text-sm'>
+									<p className='text-sm text-error'>
 										{errors.lastName}
 									</p>
 								)}
@@ -138,7 +140,7 @@ const Register = () => {
 
 							<div className='col-span-6'>
 								{errors.email && (
-									<p className='text-error text-sm'>
+									<p className='text-sm text-error'>
 										{errors.email}
 									</p>
 								)}
@@ -165,7 +167,7 @@ const Register = () => {
 
 							<div className='col-span-6 sm:col-span-3'>
 								{errors.program && (
-									<p className='text-error text-sm'>
+									<p className='text-sm text-error'>
 										{errors.program}
 									</p>
 								)}
@@ -191,7 +193,7 @@ const Register = () => {
 
 							<div className='col-span-6 sm:col-span-3'>
 								{errors.indexNumber && (
-									<p className='text-error text-sm'>
+									<p className='text-sm text-error'>
 										{errors.indexNumber}
 									</p>
 								)}
@@ -217,7 +219,7 @@ const Register = () => {
 
 							<div className='col-span-6 sm:col-span-3'>
 								{errors.password && (
-									<p className='text-error text-sm'>
+									<p className='text-sm text-error'>
 										{errors.password}
 									</p>
 								)}
@@ -243,7 +245,7 @@ const Register = () => {
 
 							<div className='col-span-6 sm:col-span-3'>
 								{errors.PasswordConfirmation && (
-									<p className='text-error text-sm'>
+									<p className='text-sm text-error'>
 										{errors.PasswordConfirmation}
 									</p>
 								)}
@@ -267,14 +269,15 @@ const Register = () => {
 								/>
 							</div>
 
-							<div className='col-span-6 sm:flex sm:items-center sm:gap-4 flex-col'>
+							<div className='flex-col col-span-6 sm:flex sm:items-center sm:gap-4'>
 								<Button
 									children='Create my account'
 									type='submit'
 									disabled={isSubmitting}
+									
 								/>
 
-								<p className=' mt-4 text-sm text-gray-500 sm:mt-0 text-center flex'>
+								<p className='flex mt-4 text-sm text-center text-gray-500 sm:mt-0'>
 									Already have an account?
 									<NavItem
 										customColor='text-accent underline ml-1 hover:no-underline'

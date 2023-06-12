@@ -13,6 +13,7 @@ export default {
 				success: '#36d399',
 				warning: '#fbbd23',
 				error: '#f87272',
+				textgray: '#5e5e5e',
 			},
 		},
 	},

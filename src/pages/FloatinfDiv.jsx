@@ -25,13 +25,13 @@ function RandomNumberDiv() {
 		moveDiv();
 
 		// Call moveDiv every 3 seconds (3000 milliseconds)
-		const intervalId = setInterval(moveDiv, 3000);
+		const intervalId = setInterval(moveDiv, 7000);
 
 		// Clean up the interval on component unmount
 		return () => clearInterval(intervalId);
 	}, []);
 
-	return <div className='absolute bg-amber-400 p-10 rounded-2xl animate-bounce' id='randomNumberDiv'></div>;
+	return <div className='absolute p-10 rounded-full duration-[15000ms] ease-in-out bg-pink-400' id='randomNumberDiv'></div>;
 }
 
 export default RandomNumberDiv;
