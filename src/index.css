@@ -1,5 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @tailwind base;
+.@tailwind components;
+@tailwind utilities; */
 
+.primary {
+	background-color: #284fff
+}
 
+.secondary {
+	background-color: #d926a9
+}
+
+.accent {
+	background-color: #1fb2a6
+}
+
+.neutral {
+	background-color: #2a323c
+}
+
+.base-100 {
+	background-color: #111827
+}
+
+.info {
+	background-color: #3abff8
+}
+
+.success {
+	background-color: #36d399
+}
+
+.warning {
+	background-color: #1100ff
+}
+
+.error {
+	background-color: #db0202
+}
+
+.text {
+	background-color: #333
+}

@@ -9,10 +9,9 @@ import { Box } from '@chakra-ui/react';
 function App() {
 	return (
 		<Box
-			bg={''}
+			
 			width={'full'}
 			height={'full'}>
-
 			<Routes>
 				<Route
 					index
