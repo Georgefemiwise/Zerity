@@ -22,18 +22,19 @@ export default function Sidebar() {
 			left={'5'}
 			h={'95vh'}
 			marginTop={'2.1vh'}
-			w={navSize == 'small' ? '75px' : '200px'}
+			w={navSize == 'small' ? '70px' : '200px'}
 			boxShadow={'0 4px 12px 0 rgba(0, 0, 0, 0.1)'}
 			flexDir={'column'}
 			borderRadius={'sm'}
 			justifyContent={'space-between'}
 			transition={'ease-out'}
-		transitionDuration={'0.3s'}>
+			transitionDuration={'0.3s'}
+			>
 			<Flex
 				as={'nav'}
 				flexDir={'column'}
 				alignItems={navSize == 'small' ? 'center' : 'flex-start'}
-			px={3}>
+				px={3}>
 				<IconButton
 					variant={'outline'}
 					bg={'blackAlpha.100'}
@@ -52,7 +53,8 @@ export default function Sidebar() {
 				{/* navitems */}
 
 				<NavItem
-					navSize={navSize}active
+					navSize={navSize}
+					active
 					icon={FaHome}
 					title={'Dashboard'}
 				/>
@@ -60,7 +62,6 @@ export default function Sidebar() {
 					navSize={navSize}
 					icon={FaUserTag}
 					title={'account'}
-					
 				/>
 				<NavItem
 					navSize={navSize}
