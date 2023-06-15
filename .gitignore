@@ -23,8 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-
-
+designs
+.vscode
 designs/DB_design.dia
 designs/UML_design.dia
 designs/DB_design.dia.autosave

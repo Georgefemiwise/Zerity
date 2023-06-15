@@ -1,47 +1,38 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import DashboardPage from './pages/DashboardPage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import { Box } from '@chakra-ui/react';
 
-import Home from './pages/Home';
-import Hall from './pages/Hall';
-import Register from './pages/user/Register';
-import Account from './pages/user/Account';
-import Logout from './pages/user/Logout';
-import NoPage from './pages/NoPage';
-import Login from './pages/user/Login';
-
-export default function App() {
+function App() {
 	return (
-		<div className='bg-gray-900'>
+		<Box
+			
+			width={'full'}
+			height={'full'}>
 			<Routes>
 				<Route
-					path='/'
 					index
-					element={<Home />}
+					path='/'
+					element={<HomePage />}
 				/>
 				<Route
-					path='hall'
-					element={<Hall />}
+					path='/dashboard'
+					element={<DashboardPage />}
 				/>
 				<Route
-					path='register'
-					element={<Register />}
+					path='/login'
+					element={<LoginPage />}
 				/>
 				<Route
-					path='login'
-					element={<Login />}
-				/>
-				<Route
-					path='account'
-					element={<Account />}>
-					<Route
-						path='logout'
-						element={<Logout />}></Route>
-				</Route>
-				<Route
-					path='*'
-					element={<NoPage />}
+					path='/signup'
+					element={<SignupPage />}
 				/>
 			</Routes>
-		</div>
+		</Box>
 	);
 }
+
+export default App;
